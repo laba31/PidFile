@@ -1,5 +1,24 @@
 package PidFile;
 
+=head1 NAME
+
+PidFile - managing your pid file
+
+=head1 SYNOPSIS
+
+  use PidFile;
+
+  my $pid_file = PidFile->new("/var/run/ProgramName.pid");
+  die "I am running..." unless $pid_file;
+
+=head1 DESCRIPTION
+
+This module implements a simple logic for managing pid file.
+If pid file exists, then konstructor return is false.
+Pid file will delete automaticly by destructor.
+
+=cut
+
 use v5.10;
 use strict;
 use warnings;

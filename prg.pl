@@ -9,5 +9,7 @@ use PidFile;
 
 # more suitable directory /var/run or run in own directory structure
 my $pid_file = PidFile->new("/tmp/MyPidFile.pid");
-sleep 15;
+sleep 3;
+my $second_pid = PidFile->new("/tmp/MyPidFile.pid");
+die "I am running..." unless $second_pid;
 
